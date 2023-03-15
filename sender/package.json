@@ -1,0 +1,38 @@
+{
+  "name": "sender",
+  "version": "0.0.1",
+  "title": "Essential Sender",
+  "description": "Essential sender is a package that seeks through a minimalist api to provide an efficient and simple service for sending emails in all your applications.",
+  "license": "ISC",
+  "languages": {
+    "default": "en",
+    "supported": [
+      "en",
+      "es"
+    ]
+  },
+  "modules": {
+    "path": "modules"
+  },
+  "deployment": {
+    "distributions": [
+      {
+        "name": "node",
+        "environment": "development",
+        "platform": "node",
+        "ports": {
+          "bundles": 6560,
+          "inspect": 6561
+        }
+      }
+    ]
+  },
+  "dependencies": {
+    "@beyond-js/kernel": "~0.1.8",
+    "@beyond-js/local": "~0.1.3",
+    "socket.io-client": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7"
+  }
+}
