@@ -1,5 +1,5 @@
 {
-	"name": "email",
+	"name": "core",
 	"ts": {
 		"path": "./",
 		"files": ["*"]
