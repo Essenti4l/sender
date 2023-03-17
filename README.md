@@ -10,7 +10,7 @@ npm install @essential-js/sender
 
 ## Usage
 
-To use Essential-js/sender in your project, first import the `sender` object, login with your credentials using the `login` method and then use the `sendEmail` function to send an email. Here's an example:
+To use Essential-js/sender in your project, first import the `sender` object, login with your credentials using the `login` method and then use the `send` method to send an email. Here's an example:
 
 ```typescript
 import { sender } from '@essential-js/sender/core';
