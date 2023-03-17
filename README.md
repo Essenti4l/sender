@@ -1,4 +1,4 @@
-# 📨 Essential-js/sender
+# 📨 Sender
 
 Essential-js/sender is a TypeScript package for easily sending emails.
 
