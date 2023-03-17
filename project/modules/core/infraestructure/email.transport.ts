@@ -1,32 +1,36 @@
 import * as nodemailer from 'nodemailer';
 import { Email } from '../domain/email.value';
 
+export interface IOptions {
+	host?: string;
+	port?: number;
+	service: string;
+}
+
 export class EmailTransport {
-	private email: string;
-	private password: string;
-	private service: string;
+	private credentials: any;
+	private opts: IOptions;
 
-	login(credentials: { email: string; password: string; service: string }) {
-		this.email = credentials.email;
-		this.password = credentials.password;
-		this.service = credentials.service;
-	}
+	login = (credentials: { [key: string]: any }, opts: IOptions) => {
+		this.credentials = credentials;
+		this.opts = opts;
+	};
 
-	async send(email: Email) {
+	send = async (email: Email) => {
 		try {
 			const transporter = nodemailer.createTransport({
-				service: this.service,
+				...this.opts,
 				auth: {
-					user: this.email,
-					pass: this.password,
+					...this.credentials,
 				},
+				tls: { rejectUnauthorized: false },
 			});
 
 			const response = await transporter.sendMail({
-				from: email.from,
+				...email.data,
 				to: email.to,
 				subject: email.subject,
-				...email.body,
+				html: email.template,
 			});
 
 			if ('error' in response) throw response;
@@ -34,5 +38,5 @@ export class EmailTransport {
 		} catch (error) {
 			return { status: false, error };
 		}
-	}
+	};
 }

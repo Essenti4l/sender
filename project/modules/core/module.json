@@ -3,5 +3,6 @@
 	"ts": {
 		"path": "./",
 		"files": ["*"]
-	}
+	},
+	"platforms": ["node", "backend"]
 }

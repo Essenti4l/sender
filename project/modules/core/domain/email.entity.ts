@@ -1,6 +1,7 @@
 export /*bundle*/ interface EmailEntity {
-	to: string;
+	to: string | string[];
 	from: string;
 	subject: string;
-	body: any;
+	template: string;
+	data: any;
 }

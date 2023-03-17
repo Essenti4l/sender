@@ -1,11 +1,16 @@
 import { EmailEntity } from '../domain/email.entity';
+import { TemplateProcessor } from '../infraestructure/template.processor';
+import { TransportRepository } from './transport.repository';
 
 export class UsesCases {
-	constructor(private readonly emailTransport) {}
+	constructor(
+		private readonly emailTransport: TransportRepository,
+		private readonly templateProcessor: TemplateProcessor
+	) {}
 
-	login = (credentials: { email: string; password: string; service: string }) => {
+	login = (credentials: { [key: string]: any }, opts: any) => {
 		try {
-			this.emailTransport.login(credentials);
+			this.emailTransport.login(credentials, opts);
 		} catch (error) {
 			return { status: false, error };
 		}
@@ -13,7 +18,9 @@ export class UsesCases {
 
 	send = async (email: EmailEntity) => {
 		try {
-			const response = await this.emailTransport.send(email);
+			const template = await this.templateProcessor.compile(email.template, email.data);
+
+			const response = await this.emailTransport.send({ ...email, template });
 			if ('status' in response && !response.status) throw response.error;
 
 			return { status: true };
