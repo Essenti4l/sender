@@ -1,6 +1,6 @@
-import { EmailEntity } from '../domain/email.entity';
-import { TemplateProcessor } from '../infraestructure/template.processor';
-import { TransportRepository } from './transport.repository';
+import { EmailEntity } from '../entities/email.entity';
+import { TemplateProcessor } from '../helpers/template.processor';
+import { TransportRepository } from '../repositories/transport.repository';
 
 export class UsesCases {
 	constructor(

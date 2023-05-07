@@ -1,7 +1,7 @@
 {
 	"name": "@essential-js/sender",
 	"version": "0.0.1",
-	"title": "Essential Sender",
+	"title": "Essential mailer",
 	"description": "Essential sender is a package that seeks through a minimalist api to provide an efficient and simple service for sending emails in all your applications.",
 	"license": "ISC",
 	"languages": {

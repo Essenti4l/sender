@@ -1,4 +1,4 @@
-import { EmailEntity } from '../domain/email.entity';
+import { EmailEntity } from '../entities/email.entity';
 
 export interface TransportRepository {
 	login(credentials: { [key: string]: any }, opts: any): void;

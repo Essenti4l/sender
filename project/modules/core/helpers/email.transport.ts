@@ -1,5 +1,5 @@
 import * as nodemailer from 'nodemailer';
-import { Email } from '../domain/email.value';
+import { Email } from '../entities/email.entity';
 
 export interface IOptions {
 	host?: string;

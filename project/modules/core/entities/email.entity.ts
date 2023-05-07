@@ -1,3 +1,11 @@
+export /*bundle*/ interface EmailEntity {
+	to: string | string[];
+	from: string;
+	subject: string;
+	template: string;
+	data: any;
+}
+
 export /*bundle*/ class Email {
 	to: string | string[];
 	from: string;
