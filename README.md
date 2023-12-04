@@ -6,14 +6,14 @@ Essential-js/mail is a TypeScript package for easily sending emails.
 
 To install Essential-js/mail, run the following command:
 
-npm install @essential-js/sender
+npm install @bgroup/mailer
 
 ## Usage
 
 To use Essential-js/mail in your project, first import the `mail` object, login with your credentials using the `login` method and then use the `send` method to send an email. Here's an example:
 
 ```typescript
-import { mail } from '@essential-js/sender/core';
+import { mail } from '@bgroup/mailer/core';
 
 // More secure authentication methods can be used, this is just an example.
 const credentials = { user: 'your_email', pass: 'your_email_password' };

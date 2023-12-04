@@ -1,5 +1,5 @@
 {
-	"name": "@essential-js/sender",
+	"name": "@bgroup/mailer",
 	"version": "0.0.1",
 	"title": "Essential mailer",
 	"description": "Essential sender is a package that seeks through a minimalist api to provide an efficient and simple service for sending emails in all your applications.",
